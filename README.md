@@ -2,6 +2,9 @@
 
 EcoTrack is a premium, production-grade MERN (MongoDB, Express, React, Node.js) web application designed to help users calculate, analyze, and offset their daily carbon footprint. Through precise calculator coefficients, customized vehicle-type emissions, visual analytics dashboards, gamified badges, target goals, and administrative control workspaces, EcoTrack guides users toward sustainable living.
 
+> [!TIP]
+> **Live Deployment Link:** Access the live application here: **[https://ecotrack-0xf2.onrender.com](https://ecotrack-0xf2.onrender.com)**
+
 ---
 
 ## 🌟 Key Features (What Sets EcoTrack Apart)
