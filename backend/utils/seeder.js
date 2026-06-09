@@ -2,8 +2,14 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const dns = require('dns');
 
-// Resolve querySrv ECONNREFUSED issues by setting public DNS servers
-dns.setServers(['8.8.8.8', '1.1.1.1']);
+// Resolve querySrv ECONNREFUSED issues by setting public DNS servers in development
+if (process.env.NODE_ENV !== 'production') {
+  try {
+    dns.setServers(['8.8.8.8', '1.1.1.1']);
+  } catch (err) {
+    console.warn('Could not set custom DNS servers:', err.message);
+  }
+}
 const User = require('../models/User');
 const Badge = require('../models/Badge');
 const Article = require('../models/Article');

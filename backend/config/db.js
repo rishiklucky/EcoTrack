@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 const dns = require('dns');
 
-// Resolve querySrv ECONNREFUSED issues by setting public DNS servers
-dns.setServers(['8.8.8.8', '1.1.1.1']);
+// Resolve querySrv ECONNREFUSED issues by setting public DNS servers in development
+if (process.env.NODE_ENV !== 'production') {
+  try {
+    dns.setServers(['8.8.8.8', '1.1.1.1']);
+  } catch (err) {
+    console.warn('Could not set custom DNS servers:', err.message);
+  }
+}
 
 const connectDB = async () => {
   try {
