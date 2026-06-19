@@ -53,7 +53,7 @@ const Login = () => {
     try {
       setSubmitting(true);
       setAlert({ show: false, message: '', type: 'danger' });
-      
+
       const res = await login(email, password);
 
       if (res.success) {
@@ -159,11 +159,6 @@ const Login = () => {
               Register Here
             </Link>
           </p>
-          <div className="mt-3 bg-light p-3 rounded-3 border">
-            <p className="text-muted small mb-1 fw-bold">Demo Accounts:</p>
-            <p className="text-secondary small mb-1">User: <code className="bg-white border">user@ecotrack.com</code> / <code className="bg-white border">User@123</code></p>
-            <p className="text-secondary small mb-0">Admin: <code className="bg-white border">admin@ecotrack.com</code> / <code className="bg-white border">Admin@123</code></p>
-          </div>
         </div>
       </div>
     </div>
